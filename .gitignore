@@ -1,0 +1,5 @@
+# Project exclude paths
+/cdforum-config/target/
+/cdforum-eureka/target/
+/cdforum-getway/target/
+/cdforum-manManage/target/

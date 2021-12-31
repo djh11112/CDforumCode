@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cdforum.manManage.dao.UserDao">
+
+    <select id="findById" resultType="Dept" parameterType="Long">
+		select
+		ID id,
+		CODE code,
+		NAME name,
+		PASSWORD password,
+		SALT salt,
+		AVATAR avatar,
+		ORG_ID org_id,
+		EMAIL email,
+		PHONE phone,
+		STATUS status,
+		REVISION revision,
+		CREATED_BY created_by,
+		CREATED_TIME created_time,
+		UPDATED_BY updated_by,
+		UPDATED_TIME updated_time
+		from AUTH_USER where ID=#{id}
+	</select>
+    <select id="findAll" resultType="Dept">
+		select
+		ID id,
+		CODE code,
+		NAME name,
+		PASSWORD password,
+		SALT salt,
+		AVATAR avatar,
+		ORG_ID org_id,
+		EMAIL email,
+		PHONE phone,
+		STATUS status,
+		REVISION revision,
+		CREATED_BY created_by,
+		CREATED_TIME created_time,
+		UPDATED_BY updated_by,
+		UPDATED_TIME updated_time
+		from AUTH_USER
+	</select>
+    <insert id="addDept" parameterType="Dept">
+		INSERT INTO AUTH_USER(
+		CODE,
+		NAME,
+		PASSWORD,
+		SALT,
+		AVATAR,
+		ORG_ID,
+		EMAIL,
+		PHONE,
+		EMAIL,
+		STATUS,
+		REVISION,
+		CREATED_BY,
+		CREATED_TIME,
+		UPDATED_BY,
+		UPDATED_TIME
+		)
+		 VALUES(
+		 #{id},
+		 #{code},
+		 #{name},
+		 #{password},
+		 #{salt},
+		 #{avatar},
+		 #{org_id},
+		 #{email},
+		 #{phone},
+		 #{status},
+		 #{revision},
+		 #{created_by},
+		 sysdate,
+		 #{updated_by},
+		 sysdate
+		 )
+	</insert>
+</mapper>
+ 
+
