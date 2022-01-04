@@ -1,33 +1,33 @@
 package com.cdforum.manManage.service.impl;
 
-import com.atguigu.springcloud.dao.DeptDao;
-import com.atguigu.springcloud.entities.Dept;
-import com.atguigu.springcloud.service.DeptService;
+import com.cdforum.manManage.dao.UserDao;
+import com.cdforum.manManage.entities.userEntities.Users;
+import com.cdforum.manManage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements DeptService
+public class UserServiceImpl implements UserService
 {
 	@Autowired
-	private DeptDao dao;
+	private UserDao dao;
 	
 	@Override
-	public boolean add(Dept dept)
+	public boolean add(Users dept)
 	{
 		return dao.addDept(dept);
 	}
 
 	@Override
-	public Dept get(Long id)
+	public Users get(Long id)
 	{
 		return dao.findById(id);
 	}
 
 	@Override
-	public List<Dept> list()
+	public List<Users> list()
 	{
 		return dao.findAll();
 	}

@@ -13,7 +13,7 @@ spring:
   datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mariadb://10.131.50.82:3306/aaa              # 数据库名称
+    url: jdbc:mysql://192.168.100.45:3306/aaa              # 数据库名称
     username: root
     password: 123456
     dbcp2:

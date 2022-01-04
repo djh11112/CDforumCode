@@ -4,7 +4,7 @@
 
 <mapper namespace="com.cdforum.manManage.dao.UserDao">
 
-    <select id="findById" resultType="Dept" parameterType="Long">
+    <select id="findById" resultType="com.cdforum.manManage.entities.userEntities.Users" parameterType="Long">
 		select
 		ID id,
 		CODE code,
@@ -23,7 +23,7 @@
 		UPDATED_TIME updated_time
 		from AUTH_USER where ID=#{id}
 	</select>
-    <select id="findAll" resultType="Dept">
+    <select id="findAll" resultType="com.cdforum.manManage.entities.userEntities.Users">
 		select
 		ID id,
 		CODE code,
@@ -42,7 +42,7 @@
 		UPDATED_TIME updated_time
 		from AUTH_USER
 	</select>
-    <insert id="addDept" parameterType="Dept">
+    <insert id="addDept" parameterType="com.cdforum.manManage.entities.userEntities.Users">
 		INSERT INTO AUTH_USER(
 		CODE,
 		NAME,
