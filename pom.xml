@@ -13,6 +13,7 @@
         <module>cdforum-config</module>
         <module>cdforum-getway</module>
         <module>cdforum-manManage</module>
+        <module>cdforum-util</module>
     </modules>
 
 

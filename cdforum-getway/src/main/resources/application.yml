@@ -15,11 +15,15 @@ eureka:
 
 zuul:
   #ignored-services: microservicecloud-dept
-  prefix: /cd
-  ignored-services: "*"
+  prefix: /cd   #统一前缀
+  ignored-services: "*" # 原真实服务名忽略，多个用"*" ignored-services: "*" 要用小写，禁用真名字
   routes:
-    mydept.serviceId: cd-dept
-    mydept.path: /mycd/**
+    cdforum-manManager.serviceId: cdforum-manManager # 真实的微服务名称
+    cdforum-manManager.path: /man/** # 假名字，这里做了一个映射
+
+#    cdforum-util.serviceId: cdforum-util # 真实的微服务名称
+#    cdforum-util.path: /man/** # 假名字，这里做了一个映射
+
 
 info:
   app.name: cd

@@ -16,26 +16,31 @@ public class UserController
 	private UserService service;
 	@Autowired
 	private DiscoveryClient client;
-
+	@ResponseBody
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)
 	public boolean add(@RequestBody Users dept)
 	{
 		return service.add(dept);
 	}
-
+	@ResponseBody
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
 	public Users get(@PathVariable("id") Long id)
 	{
 		return service.get(id);
 	}
-
+	@ResponseBody
 	@RequestMapping(value = "/dept/list", method = RequestMethod.GET)
 	public List<Users> list()
 	{
 		return service.list();
 	}
+	@ResponseBody
+	@RequestMapping(value = "/dept/login", method = RequestMethod.GET)
+	public String login()
+	{
+		return "登陸成功";
+	}
 
-	
 //	@Autowired
 //	private DiscoveryClient client;
 //	@RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
